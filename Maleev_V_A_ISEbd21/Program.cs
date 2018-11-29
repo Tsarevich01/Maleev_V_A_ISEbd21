@@ -16,7 +16,7 @@ namespace Maleev_V_A_ISEbd21
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new FormParking());
         }
     }
 }
