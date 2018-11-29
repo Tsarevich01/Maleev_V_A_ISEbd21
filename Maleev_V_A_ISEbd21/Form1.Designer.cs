@@ -35,6 +35,7 @@
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
+            this.buttonCreateTruck = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCars)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,9 +53,9 @@
             this.buttonCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCreate.Location = new System.Drawing.Point(13, 13);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(75, 23);
+            this.buttonCreate.Size = new System.Drawing.Size(147, 23);
             this.buttonCreate.TabIndex = 1;
-            this.buttonCreate.Text = "Создать";
+            this.buttonCreate.Text = "Создать бензовоз";
             this.buttonCreate.UseVisualStyleBackColor = true;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
@@ -106,6 +107,17 @@
             this.buttonLeft.UseVisualStyleBackColor = true;
             this.buttonLeft.Click += new System.EventHandler(this.buttonMove_Click);
             // 
+            // buttonCreateTruck
+            // 
+            this.buttonCreateTruck.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonCreateTruck.Location = new System.Drawing.Point(180, 12);
+            this.buttonCreateTruck.Name = "buttonCreateTruck";
+            this.buttonCreateTruck.Size = new System.Drawing.Size(149, 23);
+            this.buttonCreateTruck.TabIndex = 1;
+            this.buttonCreateTruck.Text = "Создать грузовик";
+            this.buttonCreateTruck.UseVisualStyleBackColor = true;
+            this.buttonCreateTruck.Click += new System.EventHandler(this.buttonCreateBenz_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -115,6 +127,7 @@
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonRight);
             this.Controls.Add(this.buttonUp);
+            this.Controls.Add(this.buttonCreateTruck);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.pictureBoxCars);
             this.Name = "Form1";
@@ -132,6 +145,7 @@
         private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonLeft;
+        private System.Windows.Forms.Button buttonCreateTruck;
     }
 }
 
