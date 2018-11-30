@@ -16,7 +16,7 @@ namespace Maleev_V_A_ISEbd21
         /// <summary>
         /// Сколько мест на каждом уровне
         /// </summary>
-        private const int countPlaces = 20;
+        private const int countPlaces = 3;
 
 
         private int pictureWidth;
