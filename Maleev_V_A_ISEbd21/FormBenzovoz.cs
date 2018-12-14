@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Maleev_V_A_ISEbd21
 {
-    public partial class Form1 : Form
+    public partial class FormBenzovoz : Form
     {
 
         private Benzovoz car;
 
 
-        public Form1()
+        public FormBenzovoz()
         {
             InitializeComponent();
         }

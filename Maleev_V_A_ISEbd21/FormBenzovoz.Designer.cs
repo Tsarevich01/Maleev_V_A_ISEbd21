@@ -1,6 +1,6 @@
 ﻿namespace Maleev_V_A_ISEbd21
 {
-    partial class Form1
+    partial class FormBenzovoz
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBenzovoz));
             this.pictureBoxCars = new System.Windows.Forms.PictureBox();
             this.buttonCreate = new System.Windows.Forms.Button();
             this.buttonUp = new System.Windows.Forms.Button();
