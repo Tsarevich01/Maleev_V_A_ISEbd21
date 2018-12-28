@@ -118,7 +118,7 @@
             this.buttonCreateTruck.UseVisualStyleBackColor = true;
             this.buttonCreateTruck.Click += new System.EventHandler(this.buttonCreateBenz_Click);
             // 
-            // Form1
+            // FormBenzovoz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -130,8 +130,8 @@
             this.Controls.Add(this.buttonCreateTruck);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.pictureBoxCars);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormBenzovoz";
+            this.Text = "FormBenzovoz";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCars)).EndInit();
             this.ResumeLayout(false);
 
