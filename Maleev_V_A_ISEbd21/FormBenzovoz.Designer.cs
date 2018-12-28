@@ -106,7 +106,7 @@
             this.buttonLeft.UseVisualStyleBackColor = true;
             this.buttonLeft.Click += new System.EventHandler(this.buttonMove_Click);
             // 
-            // Form1
+            // FormBenzovoz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -117,8 +117,8 @@
             this.Controls.Add(this.buttonUp);
             this.Controls.Add(this.buttonCreate);
             this.Controls.Add(this.pictureBoxCars);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FormBenzovoz";
+            this.Text = "FormBenzovoz";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCars)).EndInit();
             this.ResumeLayout(false);
 
