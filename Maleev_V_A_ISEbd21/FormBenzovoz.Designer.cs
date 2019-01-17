@@ -35,6 +35,7 @@
             this.buttonRight = new System.Windows.Forms.Button();
             this.buttonDown = new System.Windows.Forms.Button();
             this.buttonLeft = new System.Windows.Forms.Button();
+            this.buttonTakeBenz = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCars)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,9 +53,9 @@
             this.buttonCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCreate.Location = new System.Drawing.Point(13, 13);
             this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(75, 23);
+            this.buttonCreate.Size = new System.Drawing.Size(146, 23);
             this.buttonCreate.TabIndex = 1;
-            this.buttonCreate.Text = "Создать";
+            this.buttonCreate.Text = "Создать грузовик";
             this.buttonCreate.UseVisualStyleBackColor = true;
             this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
             // 
@@ -106,11 +107,22 @@
             this.buttonLeft.UseVisualStyleBackColor = true;
             this.buttonLeft.Click += new System.EventHandler(this.buttonMove_Click);
             // 
+            // buttonTakeBenz
+            // 
+            this.buttonTakeBenz.Location = new System.Drawing.Point(165, 12);
+            this.buttonTakeBenz.Name = "buttonTakeBenz";
+            this.buttonTakeBenz.Size = new System.Drawing.Size(130, 23);
+            this.buttonTakeBenz.TabIndex = 3;
+            this.buttonTakeBenz.Text = "Создать бензовоз";
+            this.buttonTakeBenz.UseVisualStyleBackColor = true;
+            this.buttonTakeBenz.Click += new System.EventHandler(this.buttonCreateBenz_Click);
+            // 
             // FormBenzovoz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 446);
+            this.Controls.Add(this.buttonTakeBenz);
             this.Controls.Add(this.buttonLeft);
             this.Controls.Add(this.buttonDown);
             this.Controls.Add(this.buttonRight);
@@ -132,6 +144,7 @@
         private System.Windows.Forms.Button buttonRight;
         private System.Windows.Forms.Button buttonDown;
         private System.Windows.Forms.Button buttonLeft;
+        private System.Windows.Forms.Button buttonTakeBenz;
     }
 }
 
