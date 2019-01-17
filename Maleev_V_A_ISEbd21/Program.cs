@@ -6,6 +6,8 @@ using System.Windows.Forms;
 
 namespace Maleev_V_A_ISEbd21
 {
+    public delegate void carDelegate(Itest car);
+
     static class Program
     {
         /// <summary>

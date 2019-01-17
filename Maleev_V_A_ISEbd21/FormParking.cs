@@ -13,31 +13,31 @@ namespace Maleev_V_A_ISEbd21
     public partial class FormParking : Form
     {
         MultiLevelParking parking;
-        
+        FormTruckConfig form;
         private const int countLevel = 5;
         public FormParking()
         {
             InitializeComponent();
             parking = new MultiLevelParking(countLevel, pictureBoxParking.Width,
-pictureBoxParking.Height);
-            Draw();
+           pictureBoxParking.Height);
+            //заполнение listBox
             for (int i = 0; i < countLevel; i++)
             {
-                listBoxlevel.Items.Add("Уровень " + (i + 1));
+                listBoxLevels.Items.Add("Уровень " + (i + 1));
             }
-            listBoxlevel.SelectedIndex = 0;
+            listBoxLevels.SelectedIndex = 0;
         }
         /// <summary>
         /// Метод отрисовки парковки
         /// </summary>
         private void Draw()
         {
-            if (listBoxlevel.SelectedIndex > -1)
-            {
-                Bitmap bmp = new Bitmap(pictureBoxParking.Width,
-pictureBoxParking.Height);
+            if (listBoxLevels.SelectedIndex > -1)
+            {//если выбран один из пуктов в listBox (при старте программы ни один пунктне будет выбран и может возникнуть ошибка, если мы попытаемся обратиться к элементу
+                //listBox)
+                Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
                 Graphics gr = Graphics.FromImage(bmp);
-                parking[listBoxlevel.SelectedIndex].Draw(gr);
+                parking[listBoxLevels.SelectedIndex].Draw(gr);
                 pictureBoxParking.Image = bmp;
             }
         }
@@ -67,60 +67,56 @@ pictureBoxParking.Height);
         }*/
 
         
-
-        
-
-        
-
-        private void buttonBenzovoz_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Метод обработки выбора элемента на listBoxLevels
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (listBoxlevel.SelectedIndex > -1)
+            Draw();
+        }
+        /// <summary>
+        /// Обработка нажатия кнопки "Добавить автомобиль"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        
+        /// <summary>
+        /// Метод добавления машины
+        /// </summary>
+        /// <param name="car"></param>
+        private void AddCar(Itest car)
+        {
+            if (car != null && listBoxLevels.SelectedIndex > -1)
             {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
+                int place = parking[listBoxLevels.SelectedIndex] + car;
+                if (place > -1)
                 {
-                    ColorDialog dialogDop = new ColorDialog();
-                    if (dialogDop.ShowDialog() == DialogResult.OK)
-                    {
-                        var car = new Benzovoz(100, 1000, dialog.Color, dialogDop.Color);
-                        int place = parking[listBoxlevel.SelectedIndex] + car;
-                        if (place == -1)
-                        {
-                            MessageBox.Show("Нет свободных мест", "Ошибка",
-                           MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        Draw();
-                    }
+                    Draw();
+                }
+                else
+                {
+                    MessageBox.Show("Машину не удалось поставить");
                 }
             }
         }
 
-        private void buttonTruck_Click(object sender, EventArgs e)
+        private void buttonTakeTruck_Click(object sender, EventArgs e)
         {
-            if (listBoxlevel.SelectedIndex > -1)
-            {
-                ColorDialog dialog = new ColorDialog();
-                if (dialog.ShowDialog() == DialogResult.OK)
-                {
-                    var car = new Truck(100, 1000, dialog.Color);
-                    int place = parking[listBoxlevel.SelectedIndex] + car;
-                    if (place == -1)
-                    {
-                        MessageBox.Show("Нет свободных мест", "Ошибка",
-                       MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    Draw();
-                }
-            }
+
+            form = new FormTruckConfig();
+            form.AddEvent(AddCar);
+            form.Show();
         }
 
         private void buttonTake_Click(object sender, EventArgs e)
         {
-            if (listBoxlevel.SelectedIndex > -1)
+            if (listBoxLevels.SelectedIndex > -1)
             {
                 if (maskedTextBox.Text != "")
                 {
-                    var car = parking[listBoxlevel.SelectedIndex] -
+                    var car = parking[listBoxLevels.SelectedIndex] -
                    Convert.ToInt32(maskedTextBox.Text);
                     if (car != null)
                     {
@@ -140,12 +136,7 @@ pictureBoxParking.Height);
                     }
                     Draw();
                 }
-
             }
-        }
-        private void listBoxlevel_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Draw();
         }
     }
 }

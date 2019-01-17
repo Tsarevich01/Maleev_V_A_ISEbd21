@@ -20,5 +20,6 @@ namespace Maleev_V_A_ISEbd21
         /// </summary>
         /// <param name="g"></param>
         void DrawTruck(Graphics g);
+        void SetMainColor(Color color);
     }
 }
