@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Maleev_V_A_ISEbd21
 {
-    interface Itest
+    public interface Itest
     {
         void SetPosition(int x, int y, int width, int height);
         /// <summary>
