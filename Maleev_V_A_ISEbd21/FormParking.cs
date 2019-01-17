@@ -215,5 +215,12 @@ namespace Maleev_V_A_ISEbd21
                 Draw();
             }
         }
+
+        private void buttonSort_Click(object sender, EventArgs e)
+        {
+            parking.Sort();
+            Draw();
+            logger.Info("Сортировка уровней");
+        }
     }
 }

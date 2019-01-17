@@ -67,42 +67,34 @@ namespace Maleev_V_A_ISEbd21
             }
             using (FileStream fs = new FileStream(filename, FileMode.Create))
             {
-                using (BufferedStream bs = new BufferedStream(fs))
+                //Записываем количество уровней
+                WriteToFile("CountLeveles:" + parkingStages.Count + Environment.NewLine, fs);
+                foreach (var level in parkingStages)
                 {
-                    //Записываем количество уровней
-                    WriteToFile("CountLeveles:" + parkingStages.Count +
-                   Environment.NewLine, fs);
-                    foreach (var level in parkingStages)
+                    //Начинаем уровень
+                    WriteToFile("Level" + Environment.NewLine, fs);
+                    for (int i = 0; i < countPlaces; i++)
                     {
-                        //Начинаем уровень
-                        WriteToFile("Level" + Environment.NewLine, fs);
-                        for (int i = 0; i < countPlaces; i++)
+                        try
                         {
-                            try
+                            var car = level[i];
+                            //Записываем тип мшаины
+                            if (car.GetType().Name == "Truck")
                             {
-                                var car = level[i];
-
-                                //если место не пустое
-                                //Записываем тип мшаины
-                                if (car.GetType().Name == "Truck")
-                                {
-                                    WriteToFile(i + ":Truck:", fs);
-                                }
-                                if (car.GetType().Name == "Benzovoz")
-                                {
-                                    WriteToFile(i + ":Benzovoz:", fs);
-                                }
-                                //Записываемые параметры
-                                WriteToFile(car + Environment.NewLine, fs);
+                                WriteToFile(i + ":Truck:", fs);
                             }
-                            finally { }
-                            
+                            if (car.GetType().Name == "Benzovoz")
+                            {
+                                WriteToFile(i + ":Benzovoz:", fs);
+                            }
+                            //Записываемые параметры
+                            WriteToFile(car + Environment.NewLine, fs);
                         }
+                        finally { }
                     }
                 }
             }
-            
-        }
+        }
         /// <summary>
         /// Метод записи информации в файл
         /// </summary>
@@ -122,19 +114,16 @@ namespace Maleev_V_A_ISEbd21
         {
             if (!File.Exists(filename))
             {
-                throw new FileNotFoundException();
+                throw new FileNotFoundException();
             }
             string bufferTextFromFile = "";
             using (FileStream fs = new FileStream(filename, FileMode.Open))
             {
-                using (BufferedStream bs = new BufferedStream(fs))
+                byte[] b = new byte[fs.Length];
+                UTF8Encoding temp = new UTF8Encoding(true);
+                while (fs.Read(b, 0, b.Length) > 0)
                 {
-                    byte[] b = new byte[fs.Length];
-                    UTF8Encoding temp = new UTF8Encoding(true);
-                    while (bs.Read(b, 0, b.Length) > 0)
-                    {
-                        bufferTextFromFile += temp.GetString(b);
-                    }
+                    bufferTextFromFile += temp.GetString(b);
                 }
             }
             bufferTextFromFile = bufferTextFromFile.Replace("\r", "");
@@ -152,9 +141,10 @@ namespace Maleev_V_A_ISEbd21
             else
             {
                 //если нет такой записи, то это не те данные
-                throw new Exception("Неверный формат файла");
+                throw new Exception("Неверный формат файла");
             }
             int counter = -1;
+            int counterCar = 0;
             Itest car = null;
             for (int i = 1; i < strs.Length; ++i)
             {
@@ -163,6 +153,7 @@ namespace Maleev_V_A_ISEbd21
                 {
                     //начинаем новый уровень
                     counter++;
+                    counterCar = 0;
                     parkingStages.Add(new Parking<Itest>(countPlaces, pictureWidth,
                     pictureHeight));
                     continue;
@@ -179,9 +170,15 @@ namespace Maleev_V_A_ISEbd21
                 {
                     car = new Benzovoz(strs[i].Split(':')[2]);
                 }
-                parkingStages[counter][Convert.ToInt32(strs[i].Split(':')[0])] = car;
+                parkingStages[counter][counterCar++] = car;
             }
-            
+        }
+        /// <summary>
+        /// Сортировка уровней  
+        /// </summary>
+        public void Sort()
+        {
+            parkingStages.Sort();
         }
     }
 }

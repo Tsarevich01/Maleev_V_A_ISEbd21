@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Maleev_V_A_ISEbd21
 {
-    public class Benzovoz : Truck
+    public class Benzovoz : Truck, IComparable<Benzovoz>, IEquatable<Benzovoz>
     {
         /// <summary>
         /// Дополнительный цвет
@@ -17,11 +17,18 @@ namespace Maleev_V_A_ISEbd21
         /// <summary>
         /// Конструктор
         /// </summary>
-
+        private int _countLines;
+        public int CountLines
+        {
+            set { if (value > 0 && value < 4) _countLines = value; }
+            get { return _countLines; }
+        }
         public Benzovoz(int maxSpeed, float weight, Color mainColor, Color dopColor) :
         base(maxSpeed, weight, mainColor)
         {
             DopColor = dopColor;
+            Random rnd = new Random();
+            CountLines = rnd.Next(1, 4);
         }
 
 
@@ -52,6 +59,80 @@ namespace Maleev_V_A_ISEbd21
         }        public override string ToString()
         {
             return base.ToString() + ";" + DopColor.Name;
+        }        public int CompareTo(Benzovoz other)
+        {
+            var res = (this is Truck).CompareTo(other is Truck);
+            if (res != 0)
+            {
+                return res;
+            }
+            if (DopColor != other.DopColor)
+            {
+                DopColor.Name.CompareTo(other.DopColor.Name);
+            }
+            
+            if (CountLines != other.CountLines)
+            {
+                return CountLines.CompareTo(other.CountLines);
+            }
+            return 0;
+        }
+        /// <summary>
+        /// Метод интерфейса IEquatable для класса SportCar
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public bool Equals(Benzovoz other)
+        {
+            var res = (this as Truck).Equals(other as Truck);
+            if (!res)
+            {
+                return res;
+            }
+            if (GetType().Name != other.GetType().Name)
+            {
+                return false;
+            }
+            if (DopColor != other.DopColor)
+            {
+                return false;
+            }
+            
+            
+            if (CountLines != other.CountLines)
+            {
+                return false;
+            }
+            return true;
+        }
+        /// <summary>
+        /// Перегрузка метода от object
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public override bool Equals(Object obj)
+        {
+            if (obj == null)
+            {
+                return false;
+            }
+            Benzovoz carObj = obj as Benzovoz;
+            if (carObj == null)
+            {
+                return false;
+            }
+            else
+            {
+                return Equals(carObj);
+            }
+        }
+        /// <summary>
+        /// Перегрузка метода от object
+        /// </summary>
+        /// <returns></returns>
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
         }
     }
 }
