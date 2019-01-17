@@ -138,7 +138,7 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Дополнительный цвет";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
+            this.label4.DragDrop += new System.Windows.Forms.DragEventHandler(this.label2_DragDrop);
             this.label4.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
             // 
             // label3
@@ -173,7 +173,7 @@
             // 
             // panelGold
             // 
-            this.panelGold.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panelGold.BackColor = System.Drawing.Color.Gold;
             this.panelGold.Location = new System.Drawing.Point(59, 169);
             this.panelGold.Name = "panelGold";
             this.panelGold.Size = new System.Drawing.Size(46, 44);
@@ -209,7 +209,7 @@
             // 
             // panelBlue
             // 
-            this.panelBlue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panelBlue.BackColor = System.Drawing.Color.Blue;
             this.panelBlue.Location = new System.Drawing.Point(59, 69);
             this.panelBlue.Name = "panelBlue";
             this.panelBlue.Size = new System.Drawing.Size(46, 44);
@@ -248,10 +248,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 337);
+            this.Controls.Add(this.pictureBoxCar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBoxCar);
             this.Name = "FormTruckConfig";
             this.Text = "FormTruckConfig";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).EndInit();
