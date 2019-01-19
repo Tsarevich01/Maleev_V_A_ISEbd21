@@ -63,27 +63,13 @@ namespace Maleev_V_A_ISEbd21
             }
         }
 
-        /// <summary>
-        /// Передаем информацию при нажатии на Label
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-        /// <summary>
-        /// Передаем информацию при нажатии на Label
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
         private void labelbenzovoz_MouseDown(object sender, MouseEventArgs e)
         {
             labelBenzovoz.DoDragDrop(labelBenzovoz.Text, DragDropEffects.Move |
            DragDropEffects.Copy);
         }
-        /// <summary>
-        /// Проверка получаемой информации (ее типа на соответствие требуемому)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
         private void panelCar_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
@@ -95,11 +81,7 @@ namespace Maleev_V_A_ISEbd21
                 e.Effect = DragDropEffects.None;
             }
         }
-        /// <summary>
-        /// Действия при приеме перетаскиваемой информации
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
         private void panelCar_DragDrop(object sender, DragEventArgs e)
         {
             switch (e.Data.GetData(DataFormats.Text).ToString())
@@ -114,7 +96,7 @@ namespace Maleev_V_A_ISEbd21
             DrawTruck();
         }
 
-        private void label1_DragDrop(object sender, DragEventArgs e)
+        private void labelMainColor_DragDrop(object sender, DragEventArgs e)
         {
             if (car != null)
             {
@@ -123,7 +105,7 @@ namespace Maleev_V_A_ISEbd21
             }
         }
 
-        private void label1_DragEnter(object sender, DragEventArgs e)
+        private void labelMainColor_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(typeof(Color)))
             {
@@ -141,7 +123,7 @@ namespace Maleev_V_A_ISEbd21
                 DragDropEffects.Move | DragDropEffects.Copy);
         }
 
-        private void label2_DragDrop(object sender, DragEventArgs e)
+        private void labelColorDop_DragDrop(object sender, DragEventArgs e)
         {
             if (car != null)
             {
@@ -153,7 +135,7 @@ namespace Maleev_V_A_ISEbd21
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAdd_Click(object sender, EventArgs e)
         {
             eventAddCar?.Invoke(car);
             Close();
