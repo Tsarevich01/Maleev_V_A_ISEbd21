@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +13,8 @@ namespace Maleev_V_A_ISEbd21
     public partial class FormParking : Form
     {
         MultiLevelParking parking;
-        FormTruckConfig form;
+        FormTruckConfig form;
+
         private const int countLevel = 5;
         public FormParking()
         {
@@ -27,9 +28,7 @@ namespace Maleev_V_A_ISEbd21
             }
             listBoxLevels.SelectedIndex = 0;
         }
-        /// <summary>
-        /// Метод отрисовки парковки
-        /// </summary>
+        
         private void Draw()
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -96,3 +95,4 @@ namespace Maleev_V_A_ISEbd21
         }
     }
 }
+
