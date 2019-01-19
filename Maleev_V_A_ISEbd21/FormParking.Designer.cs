@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxTakeCar = new System.Windows.Forms.PictureBox();
             this.buttonBenzovoz = new System.Windows.Forms.Button();
+            this.listBoxlevel = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxParking)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTakeCar)).BeginInit();
@@ -119,11 +120,21 @@
             this.buttonBenzovoz.UseVisualStyleBackColor = true;
             this.buttonBenzovoz.Click += new System.EventHandler(this.buttonBenzovoz_Click);
             // 
+            // listBoxlevel
+            // 
+            this.listBoxlevel.FormattingEnabled = true;
+            this.listBoxlevel.Location = new System.Drawing.Point(853, 13);
+            this.listBoxlevel.Name = "listBoxlevel";
+            this.listBoxlevel.Size = new System.Drawing.Size(120, 95);
+            this.listBoxlevel.TabIndex = 3;
+            this.listBoxlevel.SelectedIndexChanged += new System.EventHandler(this.listBoxlevel_SelectedIndexChanged);
+            // 
             // FormParking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 444);
+            this.Controls.Add(this.listBoxlevel);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonBenzovoz);
             this.Controls.Add(this.buttonTruck);
@@ -148,5 +159,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBoxTakeCar;
         private System.Windows.Forms.Button buttonBenzovoz;
+        private System.Windows.Forms.ListBox listBoxlevel;
     }
 }
