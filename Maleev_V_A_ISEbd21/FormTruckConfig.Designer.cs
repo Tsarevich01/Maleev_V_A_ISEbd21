@@ -1,16 +1,11 @@
-﻿namespace Maleev_V_A_ISEbd21
+namespace Maleev_V_A_ISEbd21
 {
     partial class FormTruckConfig
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+        
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +17,7 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
+        
         private void InitializeComponent()
         {
             this.pictureBoxCar = new System.Windows.Forms.PictureBox();
@@ -84,6 +76,7 @@
             // 
             // buttonAdd
             // 
+
             this.buttonAdd.Location = new System.Drawing.Point(7, 89);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 23);
@@ -91,6 +84,7 @@
             this.buttonAdd.Text = "Добавить";
             this.buttonAdd.UseVisualStyleBackColor = true;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+
             // 
             // labelCar
             // 
@@ -116,6 +110,7 @@
             this.labelBenzovoz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelBenzovoz.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelbenzovoz_MouseDown);
             // 
+
             // panelTruck
             // 
             this.panelTruck.AllowDrop = true;
@@ -170,6 +165,7 @@
             this.groupBoxColor.TabIndex = 3;
             this.groupBoxColor.TabStop = false;
             this.groupBoxColor.Text = "Цвета";
+
             // 
             // panelGold
             // 
@@ -248,10 +244,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 337);
-            this.Controls.Add(this.pictureBoxCar);
+
+
             this.Controls.Add(this.groupBoxColor);
             this.Controls.Add(this.groupBoxTypeTruck);
             this.Controls.Add(this.panelTruck);
+            this.Controls.Add(this.pictureBoxCar);
+
             this.Name = "FormTruckConfig";
             this.Text = "FormTruckConfig";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).EndInit();

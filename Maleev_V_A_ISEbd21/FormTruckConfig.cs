@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -63,27 +63,13 @@ namespace Maleev_V_A_ISEbd21
             }
         }
 
-        /// <summary>
-        /// Передаем информацию при нажатии на Label
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
 
-        /// <summary>
-        /// Передаем информацию при нажатии на Label
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void labelbenzovoz_MouseDown(object sender, MouseEventArgs e)
         {
             labelBenzovoz.DoDragDrop(labelBenzovoz.Text, DragDropEffects.Move |
            DragDropEffects.Copy);
         }
-        /// <summary>
-        /// Проверка получаемой информации (ее типа на соответствие требуемому)
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
         private void panelCar_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Text))
@@ -95,11 +81,7 @@ namespace Maleev_V_A_ISEbd21
                 e.Effect = DragDropEffects.None;
             }
         }
-        /// <summary>
-        /// Действия при приеме перетаскиваемой информации
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
         private void panelCar_DragDrop(object sender, DragEventArgs e)
         {
             switch (e.Data.GetData(DataFormats.Text).ToString())
