@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using NLog;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,8 @@ namespace Maleev_V_A_ISEbd21
     public partial class FormParking : Form
     {
         MultiLevelParking parking;
-        FormTruckConfig form;
+        FormTruckConfig form;
+
         private const int countLevel = 5;
         private Logger logger;
         public FormParking()
@@ -126,7 +127,8 @@ namespace Maleev_V_A_ISEbd21
                     {
                         MessageBox.Show(ex.Message, "Неизвестная ошибка",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    }
+
                 }
             }
         }
@@ -146,7 +148,8 @@ namespace Maleev_V_A_ISEbd21
                 {
                     MessageBox.Show(ex.Message, "Неизвестная ошибка при сохранении",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                }
+
             }
         }
 
@@ -170,7 +173,8 @@ namespace Maleev_V_A_ISEbd21
                 {
                     MessageBox.Show(ex.Message, "Неизвестная ошибка при сохранении",
                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                }
+
                 Draw();
             }
         }
