@@ -90,7 +90,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Добавить";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // labelCar
             // 
@@ -138,8 +138,8 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Дополнительный цвет";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.DragDrop += new System.Windows.Forms.DragEventHandler(this.label2_DragDrop);
-            this.label4.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
+            this.label4.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelColorDop_DragDrop);
+            this.label4.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelMainColor_DragEnter);
             // 
             // label3
             // 
@@ -151,8 +151,8 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Основной цвет";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label3.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
+            this.label3.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelMainColor_DragDrop);
+            this.label3.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelMainColor_DragEnter);
             // 
             // groupBox2
             // 
