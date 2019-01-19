@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,7 +13,8 @@ namespace Maleev_V_A_ISEbd21
     public partial class FormParking : Form
     {
         MultiLevelParking parking;
-        FormTruckConfig form;
+        FormTruckConfig form;
+
         private const int countLevel = 5;
         public FormParking()
         {
@@ -27,9 +28,7 @@ namespace Maleev_V_A_ISEbd21
             }
             listBoxLevels.SelectedIndex = 0;
         }
-        /// <summary>
-        /// Метод отрисовки парковки
-        /// </summary>
+        
         private void Draw()
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -41,51 +40,12 @@ namespace Maleev_V_A_ISEbd21
                 pictureBoxParking.Image = bmp;
             }
         }
-        /// <summary>
-        /// Обработка нажатия кнопки "Припарковать автомобиль"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        //private void buttonSetTruck_Click
-        /// <summary>
-        /// Обработка нажатия кнопки "Припарковать гоночный автомобиль"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /*private void buttonSetBenzovoz_Click(object sender, EventArgs e)
-        {
-            
-        }*/
-        /// <summary>
-        /// Обработка нажатия кнопки "Забрать"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /*private void buttonTakeCar_Click(object sender, EventArgs e)
-        {
-            
-        }*/
-
         
-        /// <summary>
-        /// Метод обработки выбора элемента на listBoxLevels
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
         }
-        /// <summary>
-        /// Обработка нажатия кнопки "Добавить автомобиль"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         
-        /// <summary>
-        /// Метод добавления машины
-        /// </summary>
-        /// <param name="car"></param>
         private void AddCar(Itest car)
         {
             if (car != null && listBoxLevels.SelectedIndex > -1)
@@ -175,3 +135,4 @@ namespace Maleev_V_A_ISEbd21
         }
     }
 }
+

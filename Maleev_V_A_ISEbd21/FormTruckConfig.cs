@@ -63,7 +63,7 @@ namespace Maleev_V_A_ISEbd21
             }
         }
 
-        
+
         private void labelbenzovoz_MouseDown(object sender, MouseEventArgs e)
         {
             labelBenzovoz.DoDragDrop(labelBenzovoz.Text, DragDropEffects.Move |
