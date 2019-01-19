@@ -33,7 +33,7 @@ namespace Maleev_V_A_ISEbd21
             }
             listBoxLevels.SelectedIndex = 0;
         }
-       
+        
         private void Draw()
         {
             if (listBoxLevels.SelectedIndex > -1)
@@ -45,7 +45,7 @@ namespace Maleev_V_A_ISEbd21
                 pictureBoxParking.Image = bmp;
             }
         }
-       
+        
         private void listBoxLevels_SelectedIndexChanged(object sender, EventArgs e)
         {
             Draw();
@@ -178,5 +178,13 @@ namespace Maleev_V_A_ISEbd21
                 Draw();
             }
         }
+
+        private void buttonSort_Click(object sender, EventArgs e)
+        {
+            parking.Sort();
+            Draw();
+            logger.Info("Сортировка уровней");
+        }
     }
 }
+

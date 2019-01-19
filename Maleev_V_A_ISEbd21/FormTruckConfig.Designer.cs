@@ -1,4 +1,4 @@
-﻿namespace Maleev_V_A_ISEbd21
+namespace Maleev_V_A_ISEbd21
 {
     partial class FormTruckConfig
     {
