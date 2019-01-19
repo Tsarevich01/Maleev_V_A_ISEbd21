@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.pictureBoxCar = new System.Windows.Forms.PictureBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxTypeTruck = new System.Windows.Forms.GroupBox();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.labelCar = new System.Windows.Forms.Label();
             this.labelBenzovoz = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panelTruck = new System.Windows.Forms.Panel();
+            this.labelDopColor = new System.Windows.Forms.Label();
+            this.labelMainColor = new System.Windows.Forms.Label();
+            this.groupBoxColor = new System.Windows.Forms.GroupBox();
             this.panelGold = new System.Windows.Forms.Panel();
             this.panelYellow = new System.Windows.Forms.Panel();
             this.panelGray = new System.Windows.Forms.Panel();
@@ -47,9 +47,9 @@
             this.panelWhite = new System.Windows.Forms.Panel();
             this.panelBlack = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.groupBoxTypeTruck.SuspendLayout();
+            this.panelTruck.SuspendLayout();
+            this.groupBoxColor.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBoxCar
@@ -60,18 +60,18 @@
             this.pictureBoxCar.TabIndex = 0;
             this.pictureBoxCar.TabStop = false;
             // 
-            // groupBox1
+            // groupBoxTypeTruck
             // 
-            this.groupBox1.Controls.Add(this.buttonCancel);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.labelCar);
-            this.groupBox1.Controls.Add(this.labelBenzovoz);
-            this.groupBox1.Location = new System.Drawing.Point(13, 53);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(130, 207);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Тип";
+            this.groupBoxTypeTruck.Controls.Add(this.buttonCancel);
+            this.groupBoxTypeTruck.Controls.Add(this.buttonAdd);
+            this.groupBoxTypeTruck.Controls.Add(this.labelCar);
+            this.groupBoxTypeTruck.Controls.Add(this.labelBenzovoz);
+            this.groupBoxTypeTruck.Location = new System.Drawing.Point(13, 53);
+            this.groupBoxTypeTruck.Name = "groupBoxTypeTruck";
+            this.groupBoxTypeTruck.Size = new System.Drawing.Size(130, 207);
+            this.groupBoxTypeTruck.TabIndex = 1;
+            this.groupBoxTypeTruck.TabStop = false;
+            this.groupBoxTypeTruck.Text = "Тип";
             // 
             // buttonCancel
             // 
@@ -82,15 +82,15 @@
             this.buttonCancel.Text = "Отменить";
             this.buttonCancel.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // buttonAdd
             // 
-            this.button1.Location = new System.Drawing.Point(7, 89);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Добавить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAdd.Location = new System.Drawing.Point(7, 89);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
+            this.buttonAdd.TabIndex = 1;
+            this.buttonAdd.Text = "Добавить";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // labelCar
             // 
@@ -116,60 +116,60 @@
             this.labelBenzovoz.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelBenzovoz.MouseDown += new System.Windows.Forms.MouseEventHandler(this.labelbenzovoz_MouseDown);
             // 
-            // panel1
+            // panelTruck
             // 
-            this.panel1.AllowDrop = true;
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(191, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(414, 288);
-            this.panel1.TabIndex = 2;
-            this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelCar_DragDrop);
-            this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelCar_DragEnter);
+            this.panelTruck.AllowDrop = true;
+            this.panelTruck.Controls.Add(this.labelDopColor);
+            this.panelTruck.Controls.Add(this.labelMainColor);
+            this.panelTruck.Location = new System.Drawing.Point(191, 27);
+            this.panelTruck.Name = "panelTruck";
+            this.panelTruck.Size = new System.Drawing.Size(414, 288);
+            this.panelTruck.TabIndex = 2;
+            this.panelTruck.DragDrop += new System.Windows.Forms.DragEventHandler(this.panelCar_DragDrop);
+            this.panelTruck.DragEnter += new System.Windows.Forms.DragEventHandler(this.panelCar_DragEnter);
             // 
-            // label4
+            // labelDopColor
             // 
-            this.label4.AllowDrop = true;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.Location = new System.Drawing.Point(124, 240);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 23);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Дополнительный цвет";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label4.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
+            this.labelDopColor.AllowDrop = true;
+            this.labelDopColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelDopColor.Location = new System.Drawing.Point(124, 240);
+            this.labelDopColor.Name = "labelDopColor";
+            this.labelDopColor.Size = new System.Drawing.Size(149, 23);
+            this.labelDopColor.TabIndex = 0;
+            this.labelDopColor.Text = "Дополнительный цвет";
+            this.labelDopColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelDopColor.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelMainColor_DragDrop);
+            this.labelDopColor.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelMainColor_DragEnter);
             // 
-            // label3
+            // labelMainColor
             // 
-            this.label3.AllowDrop = true;
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label3.Location = new System.Drawing.Point(18, 240);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 23);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Основной цвет";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.DragDrop += new System.Windows.Forms.DragEventHandler(this.label1_DragDrop);
-            this.label3.DragEnter += new System.Windows.Forms.DragEventHandler(this.label1_DragEnter);
+            this.labelMainColor.AllowDrop = true;
+            this.labelMainColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelMainColor.Location = new System.Drawing.Point(18, 240);
+            this.labelMainColor.Name = "labelMainColor";
+            this.labelMainColor.Size = new System.Drawing.Size(100, 23);
+            this.labelMainColor.TabIndex = 0;
+            this.labelMainColor.Text = "Основной цвет";
+            this.labelMainColor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelMainColor.DragDrop += new System.Windows.Forms.DragEventHandler(this.labelMainColor_DragDrop);
+            this.labelMainColor.DragEnter += new System.Windows.Forms.DragEventHandler(this.labelMainColor_DragEnter);
             // 
-            // groupBox2
+            // groupBoxColor
             // 
-            this.groupBox2.Controls.Add(this.panelGold);
-            this.groupBox2.Controls.Add(this.panelYellow);
-            this.groupBox2.Controls.Add(this.panelGray);
-            this.groupBox2.Controls.Add(this.panelRed);
-            this.groupBox2.Controls.Add(this.panelBlue);
-            this.groupBox2.Controls.Add(this.panelGreen);
-            this.groupBox2.Controls.Add(this.panelWhite);
-            this.groupBox2.Controls.Add(this.panelBlack);
-            this.groupBox2.Location = new System.Drawing.Point(630, 53);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(113, 221);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Цвета";
+            this.groupBoxColor.Controls.Add(this.panelGold);
+            this.groupBoxColor.Controls.Add(this.panelYellow);
+            this.groupBoxColor.Controls.Add(this.panelGray);
+            this.groupBoxColor.Controls.Add(this.panelRed);
+            this.groupBoxColor.Controls.Add(this.panelBlue);
+            this.groupBoxColor.Controls.Add(this.panelGreen);
+            this.groupBoxColor.Controls.Add(this.panelWhite);
+            this.groupBoxColor.Controls.Add(this.panelBlack);
+            this.groupBoxColor.Location = new System.Drawing.Point(630, 53);
+            this.groupBoxColor.Name = "groupBoxColor";
+            this.groupBoxColor.Size = new System.Drawing.Size(113, 221);
+            this.groupBoxColor.TabIndex = 3;
+            this.groupBoxColor.TabStop = false;
+            this.groupBoxColor.Text = "Цвета";
             // 
             // panelGold
             // 
@@ -248,16 +248,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 337);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBoxColor);
+            this.Controls.Add(this.groupBoxTypeTruck);
+            this.Controls.Add(this.panelTruck);
             this.Controls.Add(this.pictureBoxCar);
             this.Name = "FormTruckConfig";
             this.Text = "FormTruckConfig";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCar)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.groupBoxTypeTruck.ResumeLayout(false);
+            this.panelTruck.ResumeLayout(false);
+            this.groupBoxColor.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -265,13 +265,13 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBoxCar;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxTypeTruck;
         private System.Windows.Forms.Label labelCar;
         private System.Windows.Forms.Label labelBenzovoz;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Panel panelTruck;
+        private System.Windows.Forms.Label labelDopColor;
+        private System.Windows.Forms.Label labelMainColor;
+        private System.Windows.Forms.GroupBox groupBoxColor;
         private System.Windows.Forms.Panel panelGold;
         private System.Windows.Forms.Panel panelYellow;
         private System.Windows.Forms.Panel panelGray;
@@ -281,6 +281,6 @@
         private System.Windows.Forms.Panel panelWhite;
         private System.Windows.Forms.Panel panelBlack;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }
