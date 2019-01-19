@@ -16,7 +16,7 @@ namespace Maleev_V_A_ISEbd21
         /// <summary>
         /// Сколько мест на каждом уровне
         /// </summary>
-        private const int countPlaces = 20;
+        private const int countPlaces = 3;
 
 
         private int pictureWidth;
@@ -59,7 +59,7 @@ namespace Maleev_V_A_ISEbd21
             }
         }
 
-        public bool SaveData(string filename)
+        public void SaveData(string filename)
         {
             if (File.Exists(filename))
             {
@@ -78,9 +78,10 @@ namespace Maleev_V_A_ISEbd21
                         WriteToFile("Level" + Environment.NewLine, fs);
                         for (int i = 0; i < countPlaces; i++)
                         {
-                            var car = level[i];
-                            if (car != null)
+                            try
                             {
+                                var car = level[i];
+
                                 //если место не пустое
                                 //Записываем тип мшаины
                                 if (car.GetType().Name == "Truck")
@@ -94,11 +95,13 @@ namespace Maleev_V_A_ISEbd21
                                 //Записываемые параметры
                                 WriteToFile(car + Environment.NewLine, fs);
                             }
+                            finally { }
+                            
                         }
                     }
                 }
             }
-            return true;
+            
         }
         /// <summary>
         /// Метод записи информации в файл
@@ -115,11 +118,11 @@ namespace Maleev_V_A_ISEbd21
         /// </summary>
         /// <param name="filename"></param>
         /// <returns></returns>
-        public bool LoadData(string filename)
+        public void LoadData(string filename)
         {
             if (!File.Exists(filename))
             {
-                return false;
+                throw new FileNotFoundException();
             }
             string bufferTextFromFile = "";
             using (FileStream fs = new FileStream(filename, FileMode.Open))
@@ -149,7 +152,7 @@ namespace Maleev_V_A_ISEbd21
             else
             {
                 //если нет такой записи, то это не те данные
-                return false;
+                throw new Exception("Неверный формат файла");
             }
             int counter = -1;
             Itest car = null;
@@ -178,7 +181,7 @@ namespace Maleev_V_A_ISEbd21
                 }
                 parkingStages[counter][Convert.ToInt32(strs[i].Split(':')[0])] = car;
             }
-            return true;
+            
         }
     }
 }
