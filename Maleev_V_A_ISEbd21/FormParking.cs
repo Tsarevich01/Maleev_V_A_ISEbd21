@@ -20,46 +20,14 @@ namespace Maleev_V_A_ISEbd21
            pictureBoxParking.Height);
             Draw();
         }
-        /// <summary>
-        /// Метод отрисовки парковки
-        /// </summary>
+        
         private void Draw()
         {
             Bitmap bmp = new Bitmap(pictureBoxParking.Width, pictureBoxParking.Height);
             Graphics gr = Graphics.FromImage(bmp);
             parking.Draw(gr);
             pictureBoxParking.Image = bmp;
-        }
-        /// <summary>
-        /// Обработка нажатия кнопки "Припарковать автомобиль"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        //private void buttonSetTruck_Click
-        /// <summary>
-        /// Обработка нажатия кнопки "Припарковать гоночный автомобиль"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /*private void buttonSetBenzovoz_Click(object sender, EventArgs e)
-        {
-            
-        }*/
-        /// <summary>
-        /// Обработка нажатия кнопки "Забрать"
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /*private void buttonTakeCar_Click(object sender, EventArgs e)
-        {
-            
-        }*/
-
-        
-
-        
-
-        
+        }        
 
         private void buttonBenzovoz_Click(object sender, EventArgs e)
         {
